@@ -26,19 +26,13 @@ const userSchema=new mongoose.Schema({
       }
 });
 const User = new mongoose.model("orders", userSchema);
-async function run() {
-  try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/inventory");
+function run() {
+  
+     mongoose.connect("mongodb://127.0.0.1:27017/inventory");
     console.log("connected to db");
-    const docs = await User.find({});
-//     await docs.forEach((doc) => console.log(doc));
-// console.log(docs.amount)
-      const dok = await User.findOne({});
-      console.log(dok.qty);
-  } catch (error) {
-    console.error(error);
-  } finally {
-    await mongoose.disconnect();
-  }
-}
+    const docs =  User.findOne({});
+    console.log(docs.amount)
+    // await docs.forEach((doc) => console.log(doc));
+  }  
+
 run();
