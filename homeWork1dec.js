@@ -1,13 +1,7 @@
 const { number } = require("mathjs");
 const { Collection } = require("mongodb");
 const mongoose = require("mongoose");
-// mongoose
-//   .connect("mongodb://127.0.0.1:27017/inventory")
-//   .then((db) => console.log("connected to db "))
-//   .catch((err) => console.log("not connected"));
 
-
-//   const mongoose=require('mongoose');
 const userSchema=new mongoose.Schema({
       id:{
             type:String,
@@ -32,7 +26,7 @@ function run() {
     console.log("connected to db");
     const docs =  User.findOne({});
     console.log(docs.amount)
-    // await docs.forEach((doc) => console.log(doc));
+    
   }  
 
 run();
