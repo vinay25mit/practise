@@ -66,7 +66,7 @@ const userSchema=new mongoose.Schema({
 const User = new mongoose.model("orders", userSchema);
 async function run() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/inventory");
+    await mongoose.connect("mongodb://localhost:27017/inventory");
     console.log("connected to db");
     const docs = await User.find({});
     await docs.forEach((doc) => console.log(doc));
